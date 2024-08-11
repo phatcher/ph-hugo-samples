@@ -1,0 +1,18 @@
+{{ if .Params.series }}
+{{ $series := index .Params.series 0 }}
+{{ $taxonomy := index .Site.Taxonomies.series $series }}
+<section id="menu">
+    {{ partial "series_top.html" . }}
+    {{ $num := 0 }}
+    <ul>
+        {{ range $taxonomy.Pages.ByDate }}
+        {{ $num = add $num 1 }}
+        {{ if eq .Permalink $.Page.Permalink }}
+            <li hugo-nav="{{ .RelPermalink}}">Part {{ $num }}: {{ .LinkTitle }}</a></li>
+        {{ else }}
+            <li hugo-nav="{{ .RelPermalink}}"><a href="{{ .Permalink}}">Part {{ $num }}: {{ .LinkTitle }}</a></li>        
+        {{ end }}
+        {{ end }}
+    </ul>
+</section>
+{{end}}

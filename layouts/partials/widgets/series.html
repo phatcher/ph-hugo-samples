@@ -1,0 +1,19 @@
+{{- $series := .Site.Taxonomies.series }}
+{{- if gt (len $series) 0 }}
+<div class="widget-series widget">
+	<!-- {{ T "series_title" }} did't work here even though I have in my local i8n --->
+	<h4 class="widget__title">Series {{ T "series_title" }}</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+            {{- range $name, $taxonomy := $series }}
+			{{- with $.Site.GetPage (printf "/series/%s" $name) }}
+			<li class="widget__item">
+				<a class="widget__link" href="{{ .RelPermalink }}">{{ .Title }}</a>
+				<span class="widget__counter widget__counter--bubble">{{ $taxonomy.Count }}</span>
+			</li>
+			{{- end }}
+		{{- end }}
+        </ul>
+    </div>
+</div>
+{{- end }}

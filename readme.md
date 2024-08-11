@@ -4,13 +4,13 @@ On first cloning run
 
 ```git submodule update --init```
 
+to acquire the themes
+
 Sometime this fails on first run in which case you have to re-add the submodule explicitly
 
 ```git submodule add https://github.com/vimux/mainroad themes/mainroad```
 
 See the [SO answer](https://stackoverflow.com/questions/3336995/git-will-not-init-sync-update-new-submodules) has more details.
-
-to acquire the themes
 
 # Running the blog locally
 

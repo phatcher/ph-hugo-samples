@@ -56,7 +56,7 @@ enableEmoji = true
   list = "right"  # Configure layout for list pages
   single = "right" # Configure layout for single pages
   # Enable widgets in given order
-  widgets = ["search", "recent", "categories", "taglist", "social", "disclaimer", "languages"]
+  widgets = ["search", "current_series", "recent", "series", "categories", "taglist", "social", "disclaimer", "languages"]
   # alternatively "ddg-search" can be used, to search via DuckDuckGo
   # widgets = ["ddg-search", "recent", "categories", "taglist", "social", "languages"]
 
@@ -89,6 +89,7 @@ enableEmoji = true
 
 [taxonomies]
   category = "categories"
+  series = "series"
   tag = "tags"
   
 [markup]

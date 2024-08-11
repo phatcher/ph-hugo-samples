@@ -1,0 +1,6 @@
+{{if .Params.series}}
+  {{ $series := index .Params.series 0 }}
+  {{- with $.Site.GetPage (printf "/series/%s" $series) }}
+  <p class="series_top_page">This post is part of the <a href="{{ .RelPermalink }}">{{$series}}</a> series.</p>
+  {{- end }}
+{{end}}

@@ -1,0 +1,16 @@
+{{ if .Params.series }}
+{{ $series := index .Params.series 0 }}
+{{ $current := index .Site.Taxonomies.series $series }}
+<div class="widget-series widget">
+	<h4 class="widget__title">Series: {{ $series }}</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+            {{ range $current.Pages.ByDate }}
+			<li class="widget__item">
+				<a class="widget__link" href="{{ .RelPermalink }}">{{ .Title }}</a>
+			</li>
+			{{ end }}
+        </ul>
+    </div>	
+</div>
+{{ end }}
