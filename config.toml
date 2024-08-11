@@ -1,0 +1,97 @@
+baseURL = "/"
+title = "Paul Hatcher"
+languageCode = "en"
+paginate = 5
+theme = "mainroad"
+disqusShortname = "" # DEPRECATED! Use .Services.Disqus.Shortname
+googleAnalytics = "" # DEPRECATED! Use .Services.googleAnalytics.ID
+enableEmoji = true
+
+[services.disqus]
+  shortname = "" # Enable Disqus by entering your Disqus shortname
+  
+[services.googleAnalytics]
+  ID = "" # Enable Google Analytics by entering your tracking ID
+
+[Author]
+  name = "Paul Hatcher"
+  bio = "Software engineer with over 40 years experience, professionally I work on cloud-based architectures, scalability and DevOps. Privately I like writing code (I write it professionally as well if they let me!)."
+  avatar = "img/ph.jpg"
+
+[Params]
+  description = "Technology, business and other musings"
+  copyright = "Paul Hatcher"
+  disclaimer = "The opinions expressed herein are my own personal opinions and do not represent my employer’s view in any way."
+  opengraph = false # Enable OpenGraph if true
+  schema = false # Enable Schema
+  twitter_cards = true # Enable Twitter Cards if true
+  readmore = false # Show "Read more" button in list if true
+  authorbox = true # Show authorbox at bottom of pages if true
+  toc = false # Enable Table of Contents
+  pager = true # Show pager navigation (prev/next links) at the bottom of pages if true
+  post_meta = ["author", "date", "categories", "translations"] # Order of post meta information
+  mainSections = ["post", "blog", "news"] # Specify section pages to show on home page and the "Recent articles" widget
+  dateformat = "2 January 2006" # Change the format of dates
+  mathjaxPath = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js" # Specify MathJax path
+  mathjaxConfig = "TeX-AMS-MML_HTMLorMML" # Specify MathJax config
+  googleFontsLink = "https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" # Load Google Fonts
+  customCSS = ["css/custom.css"] # Include custom CSS files
+  customJS = ["js/custom.js"] # Include custom JS files
+
+[params.author]
+  name = "Paul Hatcher"
+  bio = "Software engineer with over 40 years experience, professionally I work on cloud-based architectures, scalability and DevOps. Privately I like writing code (I write it professionally as well if they let me!)."
+  avatar = "img/ph.jpg"
+  
+[Params.logo]
+  image = "img/lambda.png" # Logo image. Path relative to "static"
+  #title = "Paul Hatcher" # Logo title, otherwise will use site title
+  subtitle = "Technology, business and other musings" # Logo subtitle
+
+[Params.thumbnail]
+  visibility = ["list", "post"] # Control thumbnail visibility
+
+[Params.sidebar]
+  home = "right" # Configure layout for home page
+  list = "right"  # Configure layout for list pages
+  single = "right" # Configure layout for single pages
+  # Enable widgets in given order
+  widgets = ["search", "recent", "categories", "taglist", "social", "disclaimer", "languages"]
+  # alternatively "ddg-search" can be used, to search via DuckDuckGo
+  # widgets = ["ddg-search", "recent", "categories", "taglist", "social", "languages"]
+
+[Params.widgets]
+  recent_num = 10 # Set the number of articles in the "Recent articles" widget
+  categories_counter = false # Enable counter for each category in "Categories" widget
+  tags_counter = false # Enable counter for each tag in "Tags" widget
+
+[Params.widgets.social]
+  # Enable parts of social widget
+  #facebook = "username"
+  #twitter = "paulhatcher"
+  #instagram = "username"
+  linkedin = "paulwhatcher"
+  #telegram = "username"
+  github = "phatcher"
+  #gitlab = "username"
+  #bitbucket = "username"
+  #email = "example@example.com"
+
+[Params.social.share]
+  facebook = false
+  linkedin = true
+  twitter = false
+  whatsapp = false
+  email = false
+
+[permalinks]
+  post = '/:year/:month/:title'
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true # Needed for sup etc
